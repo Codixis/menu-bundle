@@ -1,0 +1,16 @@
+{
+    "name": "jmpantoja/menu-bundle",
+    "license": "MIT",
+    "type": "component",
+    "keywords": ["symfony", "sonata", "mojo", "menu"],
+    "description": "Manage menus from sonata admin",
+    "autoload": {
+        "psr-0": {
+            "Mojo\\Bundle\\MenuBundle": ""
+        }
+    },
+    "target-dir": "Mojo/Bundle/MenuBundle",
+    "require": {
+        "php": ">=5.3.3"
+    }
+}

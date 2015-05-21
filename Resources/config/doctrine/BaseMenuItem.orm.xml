@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  
+    <mapped-superclass name="Mojo\Bundle\MenuBundle\Entity\BaseMenuItem">
+        <field name="name" type="string" column="name" length="255"/>
+        <field name="routeKey" type="string" column="route_key" length="255"/>
+        <field name="routeName" type="string" column="route_name" length="255"/>
+        <field name="params" type="json_array" column="params"/>
+        <field name="position" type="integer" column="position"/>
+    </mapped-superclass>
+</doctrine-mapping>

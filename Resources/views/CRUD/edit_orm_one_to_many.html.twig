@@ -1,0 +1,154 @@
+
+{% if not sonata_admin.field_description.hasassociationadmin %}
+
+    {% for element in value %}
+        {{ element|render_relation_element(sonata_admin.field_description) }}
+    {% endfor %}
+{% else %}
+
+<div id="field_container_{{ id }}" class="field-container">
+    <span id="field_widget_{{ id }}" >
+
+                    {% if form.children|length > 0 %}
+
+        <table class="table table-bordered treetable">
+            <thead>
+                <tr>
+                    {% for field_name, nested_field in form.children|first.children %}
+                        {% if field_name == '_delete' %}
+                            <th>{{ 'action_delete'|trans({}, 'SonataAdminBundle') }}</th>
+                        {% else %}
+
+
+                        
+                        <th {{ nested_field.vars['required']  ? 'class="required"' : '' }}{% if (nested_field.vars.original_type == 'hidden')  %} style="display:none;"{% endif %}>
+                            {{ nested_field.vars['sonata_admin'].admin.trans(nested_field.vars.label) }}
+                        </th>
+                        
+
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody class="sonata-ba-tbody">
+            {% for nested_group_field_name, nested_group_field in form.children %}
+                {% set tree_id = nested_group_field.vars.value.id %}
+                {% set tree_parent = nested_group_field.vars.value.parent.id %}
+                <tr data-tt-id="{{ tree_id }}" {% if(tree_parent) %} data-tt-parent-id="{{ tree_parent }}" {% endif %}>
+                {% for field_name, nested_field in nested_group_field.children %}
+                    <td class="sonata-ba-td-{{ id }}-{{ field_name  }} control-group{% if nested_field.vars.errors|length > 0 %} error{% endif %}"{% if (nested_field.vars['attr']['hidden'] is defined) and (nested_field.vars['attr']['hidden']) %} style="display:none;"{% endif %}>
+                        {% if sonata_admin.field_description.associationadmin.formfielddescriptions[field_name] is defined %}
+                            {{ form_widget(nested_field) }}
+
+                            {% set dummy = nested_group_field.setrendered %}
+                        {% else %}
+                            {% if field_name == '_delete' %}
+                                {{ form_widget(nested_field, {'label_render': false}) }}
+                            {% else %}
+                                {{ form_widget(nested_field) }}
+                            {% endif %}
+                        {% endif %}
+                        {% if nested_field.vars.errors|length > 0 %}
+                        <div class="help-inline sonata-ba-field-error-messages">
+                            {{ form_errors(nested_field) }}
+                        </div>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    {% endif %}
+    </span>
+    {% if sonata_admin.field_description.associationadmin.hasroute('create') and sonata_admin.field_description.associationadmin.isGranted('CREATE') and btn_add %}
+        
+        <span id="field_actions_{{ id }}" >
+            <a
+                href="{{ sonata_admin.field_description.associationadmin.generateUrl('create', sonata_admin.field_description.getOption('link_parameters', {})) }}"
+                onclick="return start_field_retrieve_{{ id }}(this);"
+                class="btn btn-success btn-sm sonata-ba-action"
+                title="{{ btn_add|trans({}, btn_catalogue) }}"
+                >
+                <i class="fa fa-plus-circle"></i>
+                {{ btn_add|trans({}, btn_catalogue) }}
+            </a>
+        </span>
+    {% endif %}
+    
+    {% include 'SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_association_script.html.twig' %}
+    <script type="text/javascript">
+        $(function() {
+            $('.treetable').treetable({ expandable: true, onMove:function(node){
+                    apply_position_value_{{ id }}();
+                    
+            } });
+            
+            if($('.treetable').length > 0){
+                $('.treetable').treetable("expandAll");
+            }
+            
+            $(".treetable tr").draggable({
+                helper: "clone",
+                opacity: .75,
+                refreshPositions: true,
+                revert: "invalid",
+                revertDuration: 300,
+                scroll: true
+            });            
+            
+            
+            $(".treetable tr").each(function() {
+                $(".treetable tr").droppable({
+                    accept: "tr",
+                    drop: function(e, ui) {
+                        if(ui.draggable.data("ttId") ){
+                            if($(this).data("ttId")){
+                                $(".treetable").treetable("move", ui.draggable.data("ttId"), $(this).data("ttId"));       
+                            }
+                            else{
+                                var node = $(".treetable").treetable("node", ui.draggable.data("ttId"));
+                                $(".treetable").treetable("move", ui.draggable.data("ttId"), null);
+                            }
+                        }
+                    },
+                    hoverClass: "accept",
+                    over: function(e, ui) {
+                        var droppedEl = ui.draggable.parents("tr");
+                        if (this != droppedEl[0] && !$(this).is(".expanded")) {
+                            if($(this).data("ttId")){
+                                $(".treetable").treetable("expandNode", $(this).data("ttId"));
+                            }
+                        }
+                    }
+                });
+            });
+            
+            jQuery('#sonata-ba-field-container-{{ id }}').bind('sonata.add_element', function() {
+                apply_position_value_{{ id }}();
+            });
+            
+            function apply_position_value_{{ id }}() {
+                
+                var id = '#field_widget_' + '{{ id }}';
+
+                $('tbody tr', $(id)).each(function(index, element){
+                    
+                    var position = $('[name*=position]', element);
+                    position.val(index+1);
+                    
+                    
+                    newParent = $(element).attr('data-tt-parent-id');
+                    
+                    var parent = $('[name*=parent]', element);
+                    parent.val(newParent);
+                    
+                });
+            }
+
+        });
+    </script>
+
+</div>
+{% endif %}

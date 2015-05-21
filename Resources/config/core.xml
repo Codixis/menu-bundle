@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    
+    
+    <parameters>
+        <parameter key="menu.block.helper.menu.class">Mojo\Bundle\PublicationBundle\Block\Helper\PublicationBlockHelper</parameter>
+        <parameter key="menu.block.menu.class">Mojo\Bundle\MenuBundle\Block\Service\MenuBlockService</parameter>    
+        <parameter key="menu.manager.menu.class">Mojo\Bundle\MenuBundle\Manager\MenuManager</parameter>
+        <parameter key="menu.builder.menu.class">Mojo\Bundle\MenuBundle\Menu\MenuBuilder</parameter>
+    </parameters>    
+    
+    <services>
+        <service id="menu.block.menu" class="%menu.block.menu.class%" scope="prototype">
+            <tag name="sonata.block" />
+            <argument>publication.block.video</argument>
+            <argument type="service" id="templating" /> 
+            
+            <call method="setBuilder">
+                <argument type="service" id="menu.builder.menu" />
+            </call>                        
+            
+            <call method="setMenuHelper">
+                <argument type="service" id="menu.block.helper.menu" />
+            </call>            
+        </service>        
+        
+        <service id="menu.manager.menu" class="%menu.manager.menu.class%">
+            <argument>%mojo.menu.entity.menu%</argument>
+            <argument type="service" id="doctrine" />
+        </service>        
+        
+        <service id="menu.block.helper.menu" class="%menu.block.helper.menu.class%" scope="prototype">
+            <argument type="service" id="menu.admin.menu" />
+            <argument type="service" id="menu.manager.menu" />
+        </service>                  
+        
+        <service id="menu.builder.menu" class="%menu.builder.menu.class%">
+            <argument type="service" id="knp_menu.factory" />
+        </service>                  
+        
+    </services>
+</container>
