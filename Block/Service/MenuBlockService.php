@@ -12,9 +12,9 @@
 namespace Mojo\Bundle\MenuBundle\Block\Service;
 
 use Application\Sonata\PageBundle\Block\PreviewBlockServiceInterface;
+use Mojo\Bundle\CoreBundle\Block\Helper\CoreBlockHelperInterface;
 use Mojo\Bundle\MenuBundle\Menu\MenuBuilder;
-use Mojo\Bundle\PublicationBundle\Block\Helper\PublicationBlockHelperInterface;
-use Mojo\Bundle\PublicationBundle\Model\PublicationInterface;
+use Mojo\Bundle\MenuBundle\Model\MenuInterface;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\BlockBundle\Block\BaseBlockService;
 use Sonata\BlockBundle\Block\BlockContextInterface;
@@ -23,76 +23,81 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
- * Class MenuBlockService
+ * Class MenuBlockService.
  *
- * @package Sonata\BlockBundle\Block\Service
  *
  * @author Hugo Briand <briand@ekino.com>
  */
-class MenuBlockService extends BaseBlockService implements PreviewBlockServiceInterface {
-
+class MenuBlockService extends BaseBlockService implements PreviewBlockServiceInterface
+{
     /**
-     *
      * @var MenuBuilder
      */
     protected $builder;
 
     /**
-     *
-     * @var PublicationBlockHelperInterface $menuHelper;
+     * @var CoreBlockHelperInterface;
      */
     protected $menuHelper;
 
-    public function getMenuHelper() {
+    public function getMenuHelper()
+    {
         return $this->menuHelper;
     }
 
-    public function setMenuHelper(PublicationBlockHelperInterface $menuHelper) {
+    public function setMenuHelper(CoreBlockHelperInterface $menuHelper)
+    {
         $this->menuHelper = $menuHelper;
+
         return $this;
     }
 
-    public function getBuilder() {
+    public function getBuilder()
+    {
         return $this->builder;
     }
 
-    public function setBuilder(MenuBuilder $builder) {
+    public function setBuilder(MenuBuilder $builder)
+    {
         $this->builder = $builder;
+
         return $this;
     }
 
-    public function thumb(Response $response = null) {
-        
+    public function thumb(Response $response = null)
+    {
     }
 
-    public function preview(BlockContextInterface $blockContext, Response $response = null) {
+    public function preview(BlockContextInterface $blockContext, Response $response = null)
+    {
         return $this->execute($blockContext, $response);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function execute(BlockContextInterface $blockContext, Response $response = null) {
+    public function execute(BlockContextInterface $blockContext, Response $response = null)
+    {
         $menu = $blockContext->getBlock()->getSetting('menu');
         $settings = $blockContext->getBlock()->getSettings();
-        
+
         $this->menuHelper->refresh($menu);
 
         $knpMenu = $this->builder->createMenu($menu);
 
         return $this->renderResponse($blockContext->getTemplate(), array(
                     'menu' => $knpMenu,
-                    'settings' => $settings
+                    'settings' => $settings,
                         ), $response);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function load(BlockInterface $block) {
-
+    public function load(BlockInterface $block)
+    {
         $menu = $block->getSetting('menu', null);
-        if (!$menu instanceof PublicationInterface) {
+        if (!$menu instanceof MenuInterface) {
             $menu = $this->menuHelper->find($menu);
         }
         $block->setSetting('menu', $menu);
@@ -101,7 +106,8 @@ class MenuBlockService extends BaseBlockService implements PreviewBlockServiceIn
     /**
      * {@inheritdoc}
      */
-    public function buildEditForm(FormMapper $formMapper, BlockInterface $block) {
+    public function buildEditForm(FormMapper $formMapper, BlockInterface $block)
+    {
         $styles = $this->getStyles();
         $builder = $this->menuHelper->getSelector($formMapper, 'menu');
 
@@ -109,26 +115,27 @@ class MenuBlockService extends BaseBlockService implements PreviewBlockServiceIn
             'keys' => array(
                 array($builder, null, array()),
                 array('style', 'choice', array('required' => count($styles) > 0, 'choices' => $styles)),
-            )
+            ),
         ));
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setDefaultSettings(OptionsResolverInterface $resolver) {
+    public function setDefaultSettings(OptionsResolverInterface $resolver)
+    {
         $resolver->setDefaults(array(
             'menu' => null,
             'template' => 'MojoMenuBundle:Block/Menu:menu.html.twig',
-            'style' => 'tabs'
+            'style' => 'tabs',
         ));
     }
 
     /**
-     *
      * @return array
      */
-    protected function getStyles() {
+    protected function getStyles()
+    {
         $templates = array();
         $templates['tabs'] = 'Tabs';
         $templates['justified-tabs'] = 'Justified Tabs';
@@ -144,21 +151,24 @@ class MenuBlockService extends BaseBlockService implements PreviewBlockServiceIn
     /**
      * {@inheritdoc}
      */
-    public function getImage() {
+    public function getImage()
+    {
         return 'http://www.caseguitars.co.uk/images/news-september-thumb-3.jpg';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getName() {
+    public function getName()
+    {
         return 'Menu';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function prePersist(BlockInterface $block) {
+    public function prePersist(BlockInterface $block)
+    {
         $menu = is_object($block->getSetting('menu')) ? $block->getSetting('menu')->getId() : null;
         $block->setSetting('menu', $menu);
     }
@@ -166,11 +176,10 @@ class MenuBlockService extends BaseBlockService implements PreviewBlockServiceIn
     /**
      * {@inheritdoc}
      */
-    public function preUpdate(BlockInterface $block) {
-        
+    public function preUpdate(BlockInterface $block)
+    {
         $menu = is_object($block->getSetting('menu')) ? $block->getSetting('menu')->getId() : null;
-        
+
         $block->setSetting('menu', $menu);
     }
-
 }

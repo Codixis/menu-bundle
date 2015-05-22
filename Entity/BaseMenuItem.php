@@ -6,11 +6,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Mojo\Bundle\MenuBundle\Model\MenuItem;
 
 /**
- * BaseMenuItem
+ * BaseMenuItem.
  */
-abstract class BaseMenuItem extends MenuItem {
-
-    public function __construct() {
+abstract class BaseMenuItem extends MenuItem
+{
+    public function __construct()
+    {
         $this->setChildren(new ArrayCollection());
         $this->setParams(array());
     }

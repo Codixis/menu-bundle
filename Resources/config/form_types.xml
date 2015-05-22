@@ -8,5 +8,5 @@
             <tag name="form.type" alias="mojo_type_tree_collection" />
         </service>
     </services>
-    
+
 </container>

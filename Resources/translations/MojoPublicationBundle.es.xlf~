@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="es" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="81802e3da238dddd7f724c96ae33da07" resname="group_video">
+                <source>group_video</source>
+                <target>Videos</target>
+            </trans-unit>
+            <trans-unit id="group_photogallery">
+                <source>group_photogallery</source>
+                <target>Fotogalerias</target>
+            </trans-unit>
+            <trans-unit id="25d62c0dda609dfa7f6d93e69b30274d" resname="breadcrumb.link_video_list">
+                <source>breadcrumb.link_video_list</source>
+                <target>Videos</target>
+            </trans-unit>
+            <trans-unit id="d0c71ec3074b01fac4fbb7fbdf6c89e0" resname="form.label_site">
+                <source>form.label_site</source>
+                <target>Sitio</target>
+            </trans-unit>
+            <trans-unit id="8f633a8b87d9968e5c1985ba46dd3fda" resname="form.label_media">
+                <source>form.label_media</source>
+                <target>Media</target>
+            </trans-unit>
+            <trans-unit id="dcf3cfc61e1d1c890eee73de0d5d33f2" resname="form.label_enabled">
+                <source>form.label_enabled</source>
+                <target>Activado</target>
+            </trans-unit>
+            <trans-unit id="7f3d8d13dfc02f50cf3e58c3c7a2e105" resname="form.label_publication_date_start">
+                <source>form.label_publication_date_start</source>
+                <target>Fecha de publicación</target>
+            </trans-unit>
+            <trans-unit id="7c269cf3b053c1da5a6815619dc3dc38" resname="form.label_comments_close_at">
+                <source>form.label_comments_close_at</source>
+                <target>Cerrar comentarios a partir de:</target>
+            </trans-unit>
+            <trans-unit id="ace6fa0379eae0b69e4f28222c5aaccf" resname="form.label_comments_enabled">
+                <source>form.label_comments_enabled</source>
+                <target>Comentarios abiertos</target>
+            </trans-unit>
+            <trans-unit id="9518d8dc2757f7379be06cba648d7438" resname="form.label_comments_default_status">
+                <source>form.label_comments_default_status</source>
+                <target>Estado de comentarios nuevos</target>
+            </trans-unit>
+            <trans-unit id="64be6ef8a37ef4abc34a6c82e92ddd2e" resname="form.label_title">
+                <source>form.label_title</source>
+                <target>Título</target>
+            </trans-unit>
+            <trans-unit id="2ccb40cf6445c78531742f632717745b" resname="form.label_summary">
+                <source>form.label_summary</source>
+                <target>Entradilla</target>
+            </trans-unit>
+            <trans-unit id="c2dfa5dc09e8292244f9089f5d1cf303" resname="form.label_content">
+                <source>form.label_content</source>
+                <target>Contenido</target>
+            </trans-unit>
+            <trans-unit id="1e718e17424dfaeb5da6c577837dce19" resname="Asociations">
+                <source>Asociations</source>
+                <target>Asociaciones</target>
+            </trans-unit>
+            <trans-unit id="baddd34e4e98f368fce2a22a3584957c" resname="form.label_author">
+                <source>form.label_author</source>
+                <target>Autor</target>
+            </trans-unit>
+            <trans-unit id="073b9c57340b572b66688ecdafd5c8e2" resname="form.label_video">
+                <source>form.label_video</source>
+                <target>Video</target>
+            </trans-unit>
+            <trans-unit id="efec43ec2430fe9061ad9d4590cfd9fb" resname="list.label_title">
+                <source>list.label_title</source>
+                <target>Título</target>
+            </trans-unit>
+            <trans-unit id="1b20758aa9f9846dd991b571111965e3" resname="form.label_tags">
+                <source>form.label_tags</source>
+                <target>Etiquetas</target>
+            </trans-unit>
+            <trans-unit id="7987f91f9e997a1f3215aea5554afafa" resname="breadcrumb.link_video_delete">
+                <source>breadcrumb.link_video_delete</source>
+                <target>Borrar</target>
+            </trans-unit>
+            <trans-unit id="2b8b2e954c6c243109fa24e47b75217f" resname="archive_author">
+                <source>archive_author</source>
+                <target>Autor</target>
+            </trans-unit>
+            <trans-unit id="905f7a840860ff43c2c0ad2a612bb397" resname="comments_count">
+                <source>comments_count</source>
+                <target>Num. Comentarios</target>
+            </trans-unit>
+            <trans-unit id="724ab69e01209f6ca60128b0d4b5292f" resname="published_under">
+                <source>published_under</source>
+                <target>publicado bajo</target>
+            </trans-unit>
+            <trans-unit id="b0ad481961cf83eef7cedb8c68dbfae7" resname="no_video_found">
+                <source>no_video_found</source>
+                <target>No se han encontrado ninugn vídeo</target>
+            </trans-unit>
+            <trans-unit id="05c38e87626003822369fba7583b482a" resname="link_previous_page">
+                <source>link_previous_page</source>
+                <target>Anterior</target>
+            </trans-unit>
+            <trans-unit id="5014ef36c2fd30ce26c85b0a035f10af" resname="link_next_page">
+                <source>link_next_page</source>
+                <target>Siguiente</target>
+            </trans-unit>
+            <trans-unit id="6dd5c19c4c455f0c8de4c63708d7cb91" resname="title_video_archive">
+                <source>title_video_archive</source>
+                <target>Listado de vídeos</target>
+            </trans-unit>
+            <trans-unit id="1162907280cf3947e7e6f919398a5b00" resname="sidemenu.link_edit_video">
+                <source>sidemenu.link_edit_video</source>
+                <target>Editar Video</target>
+            </trans-unit>
+            <trans-unit id="d4929f01b422904117f8515a1fbabdb2" resname="sidemenu.link_view_comments">
+                <source>sidemenu.link_view_comments</source>
+                <target>Comentarios</target>
+            </trans-unit>
+            <trans-unit id="904e306eb0f15605cef8fdc385053943" resname="sidemenu.link_view_post">
+                <source>sidemenu.link_view_post</source>
+                <target>Ver</target>
+            </trans-unit>
+            <trans-unit id="3b563524fdb17b4a86590470d40bef74" resname="Media">
+                <source>Media</source>
+                <target>Media</target>
+            </trans-unit>
+            <trans-unit id="34e2d1989a1dbf75cd631596133ee5ee" resname="Video">
+                <source>Video</source>
+                <target>Video</target>
+            </trans-unit>
+            <trans-unit id="0cfde68aaf52543b3b10a4233422a0ff" resname="list.label_comments_enabled">
+                <source>list.label_comments_enabled</source>
+                <target>Comentarios activados</target>
+            </trans-unit>
+            <trans-unit id="d62528c100ee5c556f574ba8c37a5363" resname="list.label_enabled">
+                <source>list.label_enabled</source>
+                <target>Habilitado</target>
+            </trans-unit>
+            <trans-unit id="0d0905a0c5bdba854d03331d05863ac8" resname="batch.comment_enable">
+                <source>batch.comment_enable</source>
+                <target>Habilitado</target>
+            </trans-unit>
+            <trans-unit id="3b7f897ce3af9a9c8dafb413c69d2738" resname="batch.comment_disable">
+                <source>batch.comment_disable</source>
+                <target>Deshabilitado</target>
+            </trans-unit>
+            <trans-unit id="692282708ff15a8807b1ddfbc8b99f3a" resname="list.label_name">
+                <source>list.label_name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="72cb9cbf299a573a0ad3404528ea593d" resname="list.status_code">
+                <source>list.status_code</source>
+                <target>Estado</target>
+            </trans-unit>
+            <trans-unit id="69f67108138e7964310ce3c568b4beb3" resname="list.label_email">
+                <source>list.label_email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="885ce8ee4b65ca40a7867e8e5dd776bd" resname="list.label_url">
+                <source>list.label_url</source>
+                <target>Url</target>
+            </trans-unit>
+            <trans-unit id="cc4ffc33243bf059f4ed3210e649d928" resname="list.label_message">
+                <source>list.label_message</source>
+                <target>Mensaje</target>
+            </trans-unit>
+            <trans-unit id="cfaaade07ef976bf7432c10fefea8bf3" resname="filter.label_name">
+                <source>filter.label_name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="dd6ca2a9cb746d3089a4ce8fc319ad8d" resname="filter.label_email">
+                <source>filter.label_email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="4bb3a151b77dc1cd460d3503024a1d6d" resname="filter.label_message">
+                <source>filter.label_message</source>
+                <target>Mensaje</target>
+            </trans-unit>
+            <trans-unit id="7b06aa3535ff6b9893f83750fef011df" resname="breadcrumb.link_video_comment_list">
+                <source>breadcrumb.link_video_comment_list</source>
+                <target>Listado</target>
+            </trans-unit>
+            <trans-unit id="efca9ddc66ef2b9a9508c39759569d2d" resname="sidemenu.link_view_video">
+                <source>sidemenu.link_view_video</source>
+                <target>Ver</target>
+            </trans-unit>
+            <trans-unit id="75943db895b88394a1afe509c4aadb7d" resname="group_author">
+                <source>group_author</source>
+                <target>Autor</target>
+            </trans-unit>
+            <trans-unit id="8b0ec3cb4ff6fc4bf138e37489661775" resname="form.label_name">
+                <source>form.label_name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="a2d94b476999335ebaec68960fd2c35a" resname="form.label_email">
+                <source>form.label_email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="69d292b40f0b73992c05a083bd69d820" resname="form.label_url">
+                <source>form.label_url</source>
+                <target>Url</target>
+            </trans-unit>
+            <trans-unit id="46320bea612703223f250acb4d1ded95" resname="group_comment">
+                <source>group_comment</source>
+                <target>Comentario</target>
+            </trans-unit>
+            <trans-unit id="6147eb4cf0bdcc04ab605c764b21a4d6" resname="form.label_status">
+                <source>form.label_status</source>
+                <target>Estado</target>
+            </trans-unit>
+            <trans-unit id="3144637ce072411bc5363548dea731b6" resname="form.label_message">
+                <source>form.label_message</source>
+                <target>Mensaje</target>
+            </trans-unit>
+            <trans-unit id="6619243ad61f8d12fba8e581cf53ca01" resname="list.label_video">
+                <source>list.label_video</source>
+                <target>Video</target>
+            </trans-unit>
+            <trans-unit id="74a8b52a85862126d44b7f28452d9bb1" resname="filter.label_title">
+                <source>filter.label_title</source>
+                <target>título</target>
+            </trans-unit>
+            <trans-unit id="7d912f281f928887290e227b12b660af" resname="filter.label_summary">
+                <source>filter.label_summary</source>
+                <target>entradilla</target>
+            </trans-unit>
+            <trans-unit id="02c4f6bd44fcf5447e3121834fa0c2d3" resname="filter.label_enabled">
+                <source>filter.label_enabled</source>
+                <target>activo</target>
+            </trans-unit>
+            <trans-unit id="183b0850d296831d6adaba70929d472b" resname="filter.label_tags">
+                <source>filter.label_tags</source>
+                <target>etiquetas</target>
+            </trans-unit>
+            <trans-unit id="5b43d76d6ee91d9cdb90c632f6d0d294" resname="filter.label_author">
+                <source>filter.label_author</source>
+                <target>autor</target>
+            </trans-unit>
+            <trans-unit id="b62076dce8ab2ed38a6bd3a76ddad33b" resname="filter.label_with_open_comments">
+                <source>filter.label_with_open_comments</source>
+                <target>con comentarios abiertos</target>
+            </trans-unit>
+            <trans-unit id="f6e8514d74ad772d37bb87d07014b2b7" resname="no_photogallery_found">
+                <source>no_photogallery_found</source>
+                <target>__no_photogallery_found</target>
+            </trans-unit>
+            <trans-unit id="9cd30c85c14186b6d8aed082800a16cf" resname="title_comments">
+                <source>title_comments</source>
+                <target>__title_comments</target>
+            </trans-unit>
+            <trans-unit id="e83e3cf6eaa562df079aab692f2c4193" resname="message_comments_are_closed">
+                <source>message_comments_are_closed</source>
+                <target>__message_comments_are_closed</target>
+            </trans-unit>
+            <trans-unit id="9560ca4f2770aa7880e5e00278a87299" resname="title_leave_comment">
+                <source>title_leave_comment</source>
+                <target>__title_leave_comment</target>
+            </trans-unit>
+            <trans-unit id="a6309e6181fc5d4fb5cd0a767a5b6a15" resname="btn_add_comment">
+                <source>btn_add_comment</source>
+                <target>__btn_add_comment</target>
+            </trans-unit>
+            <trans-unit id="16bb7a63417aaf433a3b9b7dc6a8bfd9" resname="no_comments_available">
+                <source>no_comments_available</source>
+                <target>__no_comments_available</target>
+            </trans-unit>
+            <trans-unit id="053764d706fe84ece6f3ffd675dda239" resname="title_photogallery_archive">
+                <source>title_photogallery_archive</source>
+                <target>__title_photogallery_archive</target>
+            </trans-unit>
+      
+            <trans-unit id="d7aa005b21b620e539adebf3c33a605d">
+                <source>form.tab_general</source>
+                <target>__form.tab_general</target>
+            </trans-unit>
+            <trans-unit id="3718e22a06ea2921603b9dd0bdbcfbdc">
+                <source>form.tab_comments</source>
+                <target>__form.tab_comments</target>
+            </trans-unit>
+            <trans-unit id="12dab6399dacf0184252a847a91ab2d6">
+                <source>form.tab_info</source>
+                <target>__form.tab_info</target>
+            </trans-unit>
+            <trans-unit id="a5eaa2153e1f65064b712e77c00e2427">
+                <source>form.title_content</source>
+                <target>__form.title_content</target>
+            </trans-unit>
+            <trans-unit id="a34cf077dd0a0422a0343ba5fc93035c">
+                <source>form.title_multimedia</source>
+                <target>__form.title_multimedia</target>
+            </trans-unit>
+            <trans-unit id="a5e178cd50457105502e163b1f430a1d">
+                <source>form.title_status</source>
+                <target>__form.title_status</target>
+            </trans-unit>
+            <trans-unit id="2d16ae50f3167bb0ac37c4d26cbdb7d0">
+                <source>form.title_classification</source>
+                <target>__form.title_classification</target>
+            </trans-unit>
+            <trans-unit id="8fdc0c4cfc1f91521b4718d112757c31">
+                <source>form.title_config</source>
+                <target>__form.title_config</target>
+            </trans-unit>
+            <trans-unit id="b69bf980495741e4a0f5c67736afa70b">
+                <source>form.label_created_at</source>
+                <target>__form.label_created_at</target>
+            </trans-unit>
+            <trans-unit id="fbc6ebba458a98aceeb6c5ff5980ec21">
+                <source>form.label_updated_at</source>
+                <target>__form.label_updated_at</target>
+            </trans-unit>
+            <trans-unit id="68de350e503462c244e492e08e237717">
+                <source>breadcrumb.link_photo_gallery_list</source>
+                <target>__breadcrumb.link_photo_gallery_list</target>
+            </trans-unit>      
+      
+      
+        </body>
+    </file>
+</xliff>

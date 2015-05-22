@@ -2,13 +2,12 @@
 
 namespace Mojo\Bundle\MenuBundle\Manager;
 
-use Mojo\Bundle\PublicationBundle\Manager\PublicationManagerInterface;
-use Sonata\CoreBundle\Model\BaseEntityManager;
+use Mojo\Bundle\CoreBundle\Manager\BaseEntityManager;
 use Sonata\DatagridBundle\Pager\Doctrine\Pager;
 use Sonata\DatagridBundle\ProxyQuery\Doctrine\ProxyQuery;
 
-class MenuManager extends BaseEntityManager implements PublicationManagerInterface {
-
+class MenuManager extends BaseEntityManager
+{
     /**
      * {@inheritdoc}
      *
@@ -20,8 +19,8 @@ class MenuManager extends BaseEntityManager implements PublicationManagerInterfa
      *    collections - CollectionInterface
      *    mode - string public|admin
      */
-    public function getPager(array $criteria, $page, $limit = 10, array $sort = array()) {
-        
+    public function getPager(array $criteria, $page, $limit = 10, array $sort = array())
+    {
         if (!isset($criteria['mode'])) {
             $criteria['mode'] = 'public';
         }
@@ -32,14 +31,13 @@ class MenuManager extends BaseEntityManager implements PublicationManagerInterfa
                 ->select('p');
 
         if (isset($criteria['name'])) {
-
             $query->andWhere('p.name LIKE :name');
             $parameters['name'] = (string) $criteria['name'];
         }
 
         if (isset($criteria['site'])) {
             if (!is_array($criteria['site']) && stristr($criteria['site'], 'NULL')) {
-                $query->andWhere('p.site IS ' . $criteria['site']);
+                $query->andWhere('p.site IS '.$criteria['site']);
             } else {
                 $query->andWhere(sprintf('p.site IN (%s)', implode((array) $criteria['site'], ',')));
             }
@@ -55,5 +53,4 @@ class MenuManager extends BaseEntityManager implements PublicationManagerInterfa
 
         return $pager;
     }
-
 }

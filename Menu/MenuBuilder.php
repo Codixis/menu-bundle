@@ -12,25 +12,27 @@ use Knp\Menu\FactoryInterface;
 use Mojo\Bundle\MenuBundle\Model\MenuInterface;
 
 /**
- * Description of Builder
+ * Description of Builder.
  *
  * @author pato
  */
-class MenuBuilder {
-
+class MenuBuilder
+{
     private $factory;
 
     /**
      * @param FactoryInterface $factory
      */
-    public function __construct(FactoryInterface $factory) {
+    public function __construct(FactoryInterface $factory)
+    {
         $this->factory = $factory;
     }
 
-    public function createMenu(MenuInterface $menu = null) {
+    public function createMenu(MenuInterface $menu = null)
+    {
         $knpMenu = $this->factory->createItem('root');
 
-        if($menu){
+        if ($menu) {
             foreach ($menu->getChildren() as $item) {
                 $this->addMenu($knpMenu, $item);
             }
@@ -39,7 +41,8 @@ class MenuBuilder {
         return $knpMenu;
     }
 
-    private function addMenu($root, $item) {
+    private function addMenu($root, $item)
+    {
         //$name = $item->getName();
         $name = $item->getName();
         $route = $item->getRoutename();
@@ -47,13 +50,10 @@ class MenuBuilder {
 
         $node = $root->addChild($name, array(
             'route' => $route,
-            'routeParameters' => $params
+            'routeParameters' => $params,
         ));
-        foreach ($item->getChildren() as $subItem){
+        foreach ($item->getChildren() as $subItem) {
             $this->addMenu($node, $subItem);
         }
-        
-        
     }
-
 }

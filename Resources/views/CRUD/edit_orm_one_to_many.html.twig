@@ -20,11 +20,11 @@
                         {% else %}
 
 
-                        
+
                         <th {{ nested_field.vars['required']  ? 'class="required"' : '' }}{% if (nested_field.vars.original_type == 'hidden')  %} style="display:none;"{% endif %}>
                             {{ nested_field.vars['sonata_admin'].admin.trans(nested_field.vars.label) }}
                         </th>
-                        
+
 
                         {% endif %}
                     {% endfor %}
@@ -63,7 +63,7 @@
     {% endif %}
     </span>
     {% if sonata_admin.field_description.associationadmin.hasroute('create') and sonata_admin.field_description.associationadmin.isGranted('CREATE') and btn_add %}
-        
+
         <span id="field_actions_{{ id }}" >
             <a
                 href="{{ sonata_admin.field_description.associationadmin.generateUrl('create', sonata_admin.field_description.getOption('link_parameters', {})) }}"
@@ -76,19 +76,19 @@
             </a>
         </span>
     {% endif %}
-    
+
     {% include 'SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_association_script.html.twig' %}
     <script type="text/javascript">
         $(function() {
             $('.treetable').treetable({ expandable: true, onMove:function(node){
                     apply_position_value_{{ id }}();
-                    
+
             } });
-            
+
             if($('.treetable').length > 0){
                 $('.treetable').treetable("expandAll");
             }
-            
+
             $(".treetable tr").draggable({
                 helper: "clone",
                 opacity: .75,
@@ -96,16 +96,16 @@
                 revert: "invalid",
                 revertDuration: 300,
                 scroll: true
-            });            
-            
-            
+            });
+
+
             $(".treetable tr").each(function() {
                 $(".treetable tr").droppable({
                     accept: "tr",
                     drop: function(e, ui) {
                         if(ui.draggable.data("ttId") ){
                             if($(this).data("ttId")){
-                                $(".treetable").treetable("move", ui.draggable.data("ttId"), $(this).data("ttId"));       
+                                $(".treetable").treetable("move", ui.draggable.data("ttId"), $(this).data("ttId"));
                             }
                             else{
                                 var node = $(".treetable").treetable("node", ui.draggable.data("ttId"));
@@ -124,26 +124,26 @@
                     }
                 });
             });
-            
+
             jQuery('#sonata-ba-field-container-{{ id }}').bind('sonata.add_element', function() {
                 apply_position_value_{{ id }}();
             });
-            
+
             function apply_position_value_{{ id }}() {
-                
+
                 var id = '#field_widget_' + '{{ id }}';
 
                 $('tbody tr', $(id)).each(function(index, element){
-                    
+
                     var position = $('[name*=position]', element);
                     position.val(index+1);
-                    
-                    
+
+
                     newParent = $(element).attr('data-tt-parent-id');
-                    
+
                     var parent = $('[name*=parent]', element);
                     parent.val(newParent);
-                    
+
                 });
             }
 

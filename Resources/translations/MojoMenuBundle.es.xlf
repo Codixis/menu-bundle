@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="es" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="3c0556a7c35d092711154c1e1c0eabc7" resname="group_menu">
+                <source>group_menu</source>
+                <target>Menús</target>
+            </trans-unit>
+            <trans-unit id="692282708ff15a8807b1ddfbc8b99f3a" resname="list.label_name">
+                <source>list.label_name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="af48617a3946d08b6961da957a1663bb" resname="list.label_site">
+                <source>list.label_site</source>
+                <target>Sección</target>
+            </trans-unit>
+            <trans-unit id="26bfd7aaa422fa2ef126ffa160507fd0" resname="breadcrumb.link_menu_list">
+                <source>breadcrumb.link_menu_list</source>
+                <target>Menús</target>
+            </trans-unit>
+            <trans-unit id="0db377921f4ce762c62526131097968f" resname="General">
+                <source>General</source>
+                <target>General</target>
+            </trans-unit>
+            <trans-unit id="8b0ec3cb4ff6fc4bf138e37489661775" resname="form.label_name">
+                <source>form.label_name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="d0c71ec3074b01fac4fbb7fbdf6c89e0" resname="form.label_site">
+                <source>form.label_site</source>
+                <target>Sección</target>
+            </trans-unit>
+            <trans-unit id="9dea4016dbcc290b773ab2fae678aaa8" resname="Items">
+                <source>Items</source>
+                <target>Items</target>
+            </trans-unit>
+            <trans-unit id="92f0f9cac710f0b79bc9d88d174d63ac" resname="form.label_items">
+                <source>form.label_items</source>
+                <target>Items</target>
+            </trans-unit>
+            <trans-unit id="81395c7c943e903470331e261e1852d4" resname="form.label_route_key">
+                <source>form.label_route_key</source>
+                <target>Ruta</target>
+            </trans-unit>
+            <trans-unit id="304519f826f71f7d1bb10e026a799518" resname="form.label_position">
+                <source>form.label_position</source>
+                <target>Posición</target>
+            </trans-unit>
+            <trans-unit id="3562e47705a63c06e207cb7b32be60b8" resname="form.label_parent">
+                <source>form.label_parent</source>
+                <target>Padre</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

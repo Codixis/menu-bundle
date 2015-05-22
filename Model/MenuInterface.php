@@ -11,13 +11,12 @@ namespace Mojo\Bundle\MenuBundle\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- *
  * @author pato
  */
-interface MenuInterface {
-
+interface MenuInterface
+{
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -26,23 +25,24 @@ interface MenuInterface {
     public function setName($name);
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
     public function getName();
 
     /**
-     * get items
-     * 
+     * get items.
+     *
      * @return ArrayCollection
      */
     public function getItems();
 
     /**
-     * set items
-     * 
+     * set items.
+     *
      * @param ArrayCollection $items
+     *
      * @return MenuInterface
      */
     public function setItems(ArrayCollection $items);

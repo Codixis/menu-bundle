@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="es" target-language="es" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="df3f079de6961496f0460dcfdbf9bca3" resname="by">
+        <source>by</source>
+        <target>por</target>
+      </trans-unit>
+      <trans-unit id="13b5bfe96f3e2fe411c9f66f4a582adf" resname="in">
+        <source>in</source>
+        <target>en</target>
+      </trans-unit>
+      <trans-unit id="1162907280cf3947e7e6f919398a5b00" resname="sidemenu.link_edit_video">
+        <source>sidemenu.link_edit_video</source>
+        <target>Editar Video</target>
+      </trans-unit>
+      <trans-unit id="d4929f01b422904117f8515a1fbabdb2" resname="sidemenu.link_view_comments">
+        <source>sidemenu.link_view_comments</source>
+        <target>Comentarios</target>
+      </trans-unit>
+      <trans-unit id="904e306eb0f15605cef8fdc385053943" resname="sidemenu.link_view_post">
+        <source>sidemenu.link_view_post</source>
+        <target>Ver</target>
+      </trans-unit>
+      <trans-unit id="d41d8cd98f00b204e9800998ecf8427e" resname="">
+        <source></source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="f951bb49d8ecc39cb86f09ce5a68c8fd" resname="contiene">
+        <source>contiene</source>
+        <target>contiene</target>
+      </trans-unit>
+      <trans-unit id="1ccb9a11c89f7e9dfc2646c2e2995e4f" resname="no contiene">
+        <source>no contiene</source>
+        <target>no contiene</target>
+      </trans-unit>
+      <trans-unit id="fe136bf308a83ff94f639aabe8fe3baf" resname="es igual a">
+        <source>es igual a</source>
+        <target>es igual a</target>
+      </trans-unit>
+      <trans-unit id="3ad2685af832697d2580fdee17ad5329" resname="Editar Video">
+        <source>Editar Video</source>
+        <target>Editar Video</target>
+      </trans-unit>
+      <trans-unit id="30045922163d87daf194d9bcb2aa8ac4" resname="Comentarios">
+        <source>Comentarios</source>
+        <target>Comentarios</target>
+      </trans-unit>
+      <trans-unit id="9f7d0ee82b6a6ca7ddeae841f3253059" resname="valid">
+        <source>valid</source>
+        <target>publicado</target>
+      </trans-unit>
+      <trans-unit id="fedb2d84cafe20862cb4399751a8a7e3" resname="invalid">
+        <source>invalid</source>
+        <target>deshabilitado</target>
+      </trans-unit>
+      <trans-unit id="7f0217cdcdd58ba86aae84d9d3d79f81" resname="moderate">
+        <source>moderate</source>
+        <target>pendiente de moderación</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

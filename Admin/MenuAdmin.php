@@ -9,34 +9,37 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Validator\ErrorElement;
 
-class MenuAdmin extends Admin {
-
+class MenuAdmin extends Admin
+{
     /**
-     *
-     * @var array $routes 
+     * @var array
      */
     private $avaiableRoutes = array();
 
     /**
-     *
-     * @var string $itemClass
+     * @var string
      */
     private $itemClass;
 
-    public function setMenuItemClass($itemClass) {
+    public function setMenuItemClass($itemClass)
+    {
         $this->itemClass = $itemClass;
+
         return $this;
     }
 
-    public function setAvaiableRoutes(array $routes) {
+    public function setAvaiableRoutes(array $routes)
+    {
         $this->avaiableRoutes = $routes;
+
         return $this;
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function configureListFields(ListMapper $listMapper) {
+    protected function configureListFields(ListMapper $listMapper)
+    {
         $listMapper
                 ->addIdentifier('name')
                 ->add('site')
@@ -46,37 +49,38 @@ class MenuAdmin extends Admin {
     /**
      * {@inheritdoc}
      */
-    protected function configureFormFields(FormMapper $formMapper) {
-
+    protected function configureFormFields(FormMapper $formMapper)
+    {
         $formMapper
                 ->with('General', array('class' => 'col-md-4'))
                 ->add('name')
                 ->add('site', 'sonata_type_model_list', array(
                     'btn_add' => false,
                     'btn_delete' => false,
-                    'required' => true), array(
+                    'required' => true, ), array(
                     'link_parameters' => array(
-                        'selector' => 'site'
-                    )
+                        'selector' => 'site',
+                    ),
                         )
                 )
                 ->end();
 
-        if ($this->hasSubject() AND $this->getSubject()->getSite()) {
+        if ($this->hasSubject() and $this->getSubject()->getSite()) {
             $formMapper->with('Items', array('class' => 'col-md-8'))
                     ->add('items', 'mojo_type_tree_collection', array(
                             ), array(
                         'edit' => 'inline',
                         'inline' => 'table',
                         'link_parameters' => array(
-                            'site' => $this->getSubject()->getSite()->getId()
-                        )
+                            'site' => $this->getSubject()->getSite()->getId(),
+                        ),
                     ))
                     ->end();
         }
     }
 
-    public function validate(ErrorElement $errorElement, $object) {
+    public function validate(ErrorElement $errorElement, $object)
+    {
         $errorElement
                 ->with('site')
                 ->assertNotBlank()
@@ -85,7 +89,8 @@ class MenuAdmin extends Admin {
         ;
     }
 
-    public function prePersist($menu) {
+    public function prePersist($menu)
+    {
         foreach ($menu->getItems() as $item) {
             $item->setMenu($menu);
             $parent = $this->prepare($item);
@@ -93,7 +98,8 @@ class MenuAdmin extends Admin {
         }
     }
 
-    public function preUpdate($menu) {
+    public function preUpdate($menu)
+    {
         foreach ($menu->getItems() as $item) {
             $item->setMenu($menu);
             $this->prepareItem($item);
@@ -103,7 +109,8 @@ class MenuAdmin extends Admin {
         }
     }
 
-    private function prepareItem(MenuItem $item) {
+    private function prepareItem(MenuItem $item)
+    {
         $key = $item->getRouteKey();
         if (isset($this->avaiableRoutes[$key])) {
             $config = $this->avaiableRoutes[$key];
@@ -115,7 +122,8 @@ class MenuAdmin extends Admin {
         }
     }
 
-    private function prepare(MenuItem $item) {
+    private function prepare(MenuItem $item)
+    {
         $parent = null;
         if ($item->getParent() instanceof MenuItemInterface) {
             if ($item->getParent()->getId()) {

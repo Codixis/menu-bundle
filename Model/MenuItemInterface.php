@@ -4,55 +4,58 @@ namespace Mojo\Bundle\MenuBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-interface MenuItemInterface {
-
+interface MenuItemInterface
+{
     /**
-     * get menu
-     * 
+     * get menu.
+     *
      * @return MenuInterface
      */
     public function getMenu();
 
     /**
-     * set menu
-     * 
+     * set menu.
+     *
      * @param MenuInterface $menu
+     *
      * @return MenuItemInterface
      */
     public function setMenu(MenuInterface $menu);
 
     /**
-     * get parent
-     * 
+     * get parent.
+     *
      * @return MenuInterface
      */
     public function getParent();
 
     /**
-     * set parent
-     * 
+     * set parent.
+     *
      * @param MenuItemInterface $parent
+     *
      * @return MenuItemInterface
      */
     public function setParent($parent);
 
     /**
-     * get children
-     * 
+     * get children.
+     *
      * @return ArrayCollection
      */
     public function getChildren();
 
     /**
-     * set children
-     * 
+     * set children.
+     *
      * @param ArrayCollection $children
+     *
      * @return MenuItemInterface
      */
     public function setChildren(ArrayCollection $children);
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -61,14 +64,14 @@ interface MenuItemInterface {
     public function setName($name);
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
     public function getName();
 
     /**
-     * Set routeName
+     * Set routeName.
      *
      * @param string $routeName
      *
@@ -77,13 +80,13 @@ interface MenuItemInterface {
     public function setRouteName($routeName);
 
     /**
-     * Get routeName
+     * Get routeName.
      *
      * @return string
      */
     public function getRouteName();
     /**
-     * Set route
+     * Set route.
      *
      * @param string $route
      *
@@ -92,14 +95,14 @@ interface MenuItemInterface {
     public function setRouteKey($routeKey);
 
     /**
-     * Get route
+     * Get route.
      *
      * @return string
      */
     public function getRouteKey();
 
     /**
-     * Set params
+     * Set params.
      *
      * @param array $params
      *
@@ -108,23 +111,23 @@ interface MenuItemInterface {
     public function setParams($params);
 
     /**
-     * Get params
+     * Get params.
      *
      * @return array
      */
     public function getParams();
 
     /**
-     * Get position
-     * 
-     * @return integer
+     * Get position.
+     *
+     * @return int
      */
     public function getPosition();
 
     /**
-     * Set position
+     * Set position.
      *
-     * @param integer $position
+     * @param int $position
      *
      * @return MenuItemInterface
      */

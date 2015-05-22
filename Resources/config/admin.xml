@@ -14,19 +14,19 @@
 
             <call method="setMenuItemClass">
                 <argument>%mojo.menu.entity.menuitem%</argument>
-            </call>                       
-                                                                     
+            </call>
+
             <call method="setTranslationDomain">
                 <argument>%mojo.menu.admin.menu.translation_domain%</argument>
             </call>
         </service>
-        
+
         <service id="menu.admin.menuitem" class="%mojo.menu.admin.menuitem.class%">
             <tag name="sonata.admin" manager_type="orm"  label="group_menuitem"   label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument>menu.admin.menuitem</argument>
             <argument>%mojo.menu.entity.menuitem%</argument>
             <argument>%mojo.menu.admin.menuitem.controller%</argument>
-                       
+
             <call method="setPageManager">
                 <argument type="service" id="sonata.page.manager.page" />
             </call>
@@ -35,5 +35,5 @@
             </call>
         </service>
     </services>
-    
+
 </container>

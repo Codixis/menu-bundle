@@ -3,24 +3,20 @@
 namespace Mojo\Bundle\MenuBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mojo\Bundle\MenuBundle\Model\MenuItemInterface;
 
-abstract class MenuItem implements MenuItemInterface {
-
+abstract class MenuItem implements MenuItemInterface
+{
     /**
-     *
-     * @var MenuInterface 
+     * @var MenuInterface
      */
     protected $menu;
 
     /**
-     *
-     * @var MenuItemInterface 
+     * @var MenuItemInterface
      */
     protected $parent;
 
     /**
-     *
      * @var ArrayCollection
      */
     protected $children;
@@ -46,59 +42,69 @@ abstract class MenuItem implements MenuItemInterface {
     protected $params;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $position;
 
     /**
      * @inheritdoc
      */
-    public function getMenu() {
+    public function getMenu()
+    {
         return $this->menu;
     }
 
     /**
      * @inheritdoc
      */
-    public function setMenu(MenuInterface $menu) {
+    public function setMenu(MenuInterface $menu)
+    {
         $this->menu = $menu;
+
         return $this;
     }
 
     /**
      * @inheritdoc
      */
-    public function getParent() {
+    public function getParent()
+    {
         return $this->parent;
     }
 
     /**
      * @inheritdoc
      */
-    public function setParent($parent) {
+    public function setParent($parent)
+    {
         $this->parent = $parent;
+
         return $this;
     }
 
     /**
      * @inheritdoc
      */
-    public function getChildren() {
+    public function getChildren()
+    {
         return $this->children;
     }
 
     /**
      * @inheritdoc
      */
-    public function setChildren(ArrayCollection $children) {
+    public function setChildren(ArrayCollection $children)
+    {
         $this->children = $children;
+
         return $this;
     }
 
     /**
      * @inheritdoc
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
 
         return $this;
@@ -107,23 +113,28 @@ abstract class MenuItem implements MenuItemInterface {
     /**
      * @inheritdoc
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
-    public function getRouteKey() {
+    public function getRouteKey()
+    {
         return $this->routeKey;
     }
 
-    public function setRouteKey($routeKey) {
+    public function setRouteKey($routeKey)
+    {
         $this->routeKey = $routeKey;
+
         return $this;
     }
 
     /**
      * @inheritdoc
      */
-    public function setRouteName($routeName) {
+    public function setRouteName($routeName)
+    {
         $this->routeName = $routeName;
 
         return $this;
@@ -132,14 +143,16 @@ abstract class MenuItem implements MenuItemInterface {
     /**
      * @inheritdoc
      */
-    public function getRouteName() {
+    public function getRouteName()
+    {
         return $this->routeName;
     }
 
     /**
      * @inheritdoc
      */
-    public function setParams($params) {
+    public function setParams($params)
+    {
         $this->params = $params;
 
         return $this;
@@ -148,23 +161,26 @@ abstract class MenuItem implements MenuItemInterface {
     /**
      * @inheritdoc
      */
-    public function getParams() {
+    public function getParams()
+    {
         return $this->params;
     }
 
     /**
      * @inheritdoc
      */
-    public function getPosition() {
+    public function getPosition()
+    {
         return $this->position;
     }
 
     /**
      * @inheritdoc
      */
-    public function setPosition($position) {
+    public function setPosition($position)
+    {
         $this->position = $position;
+
         return $this;
     }
-
 }
