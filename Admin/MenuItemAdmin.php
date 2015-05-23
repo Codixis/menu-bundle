@@ -4,6 +4,7 @@ namespace Mojo\Bundle\MenuBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\CoreBundle\Validator\ErrorElement;
 use Sonata\PageBundle\Entity\PageManager;
 
 class MenuItemAdmin extends Admin
@@ -31,7 +32,7 @@ class MenuItemAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-                ->add('name', null, array('required' => false))
+                ->add('name', null, array('required' => true))
                 ->add('routeKey', 'choice', array(
                     'required' => false,
                     'choices' => $this->getChoices(),
@@ -43,6 +44,18 @@ class MenuItemAdmin extends Admin
         ;
     }
 
+    public function validate(ErrorElement $errorElement, $object)
+    {
+        $errorElement
+                ->with('name')
+                ->assertNotBlank()
+                ->end()
+//                ->with('site')
+//                ->assertNotBlank()
+//                ->end()
+        ;
+    }    
+    
     private function getChoices()
     {
         $site = $this->request->query->get('site', 1);

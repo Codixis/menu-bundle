@@ -25,7 +25,6 @@ class MojoMenuExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('admin.xml');
-        $loader->load('form_types.xml');
         $loader->load('core.xml');
 
         $this->configureAvaiableRoutes($config['avaiable_routes'], $container);

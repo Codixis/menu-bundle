@@ -50,6 +50,15 @@
                 <source>form.label_parent</source>
                 <target>Padre</target>
             </trans-unit>
+            <trans-unit id="cfaaade07ef976bf7432c10fefea8bf3" resname="filter.label_name">
+              <source>filter.label_name</source>
+              <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="2fb5bbd652a071ff7325c12154c9921e" resname="filter.label_site">
+              <source>filter.label_site</source>
+              <target>Sección</target>
+            </trans-unit>            
+            
         </body>
     </file>
 </xliff>
