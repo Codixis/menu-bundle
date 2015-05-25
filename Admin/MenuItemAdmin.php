@@ -54,8 +54,8 @@ class MenuItemAdmin extends Admin
 //                ->assertNotBlank()
 //                ->end()
         ;
-    }    
-    
+    }
+
     private function getChoices()
     {
         $site = $this->request->query->get('site', 1);

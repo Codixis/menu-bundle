@@ -10,8 +10,8 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Validator\ErrorElement;
 
-class MenuAdmin extends Admin {
-
+class MenuAdmin extends Admin
+{
     /**
      * @var array
      */
@@ -22,13 +22,15 @@ class MenuAdmin extends Admin {
      */
     private $itemClass;
 
-    public function setMenuItemClass($itemClass) {
+    public function setMenuItemClass($itemClass)
+    {
         $this->itemClass = $itemClass;
 
         return $this;
     }
 
-    public function setAvaiableRoutes(array $routes) {
+    public function setAvaiableRoutes(array $routes)
+    {
         $this->avaiableRoutes = $routes;
 
         return $this;
@@ -37,14 +39,16 @@ class MenuAdmin extends Admin {
     /**
      * {@inheritdoc}
      */
-    protected function configureListFields(ListMapper $listMapper) {
+    protected function configureListFields(ListMapper $listMapper)
+    {
         $listMapper
                 ->addIdentifier('name')
                 ->add('site')
         ;
     }
 
-    public function configureDatagridFilters(DatagridMapper $datagridMapper) {
+    public function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
         $datagridMapper
                 ->add('name')
                 ->add('site')
@@ -54,14 +58,15 @@ class MenuAdmin extends Admin {
     /**
      * {@inheritdoc}
      */
-    protected function configureFormFields(FormMapper $formMapper) {
+    protected function configureFormFields(FormMapper $formMapper)
+    {
         $formMapper
                 ->with('General', array('class' => 'col-md-4'))
                 ->add('name')
                 ->add('site', 'sonata_type_model_list', array(
                     'btn_add' => false,
                     'btn_delete' => false,
-                    'required' => true,), array(
+                    'required' => true, ), array(
                     'link_parameters' => array(
                         'selector' => 'site',
                     ),
@@ -83,7 +88,8 @@ class MenuAdmin extends Admin {
         }
     }
 
-    public function validate(ErrorElement $errorElement, $object) {
+    public function validate(ErrorElement $errorElement, $object)
+    {
         $errorElement
                 ->with('name')
                 ->assertNotBlank()
@@ -94,7 +100,8 @@ class MenuAdmin extends Admin {
         ;
     }
 
-    public function prePersist($menu) {
+    public function prePersist($menu)
+    {
         foreach ($menu->getItems() as $item) {
             $item->setMenu($menu);
             $parent = $this->prepare($item);
@@ -102,7 +109,8 @@ class MenuAdmin extends Admin {
         }
     }
 
-    public function preUpdate($menu) {
+    public function preUpdate($menu)
+    {
         foreach ($menu->getItems() as $key => $item) {
             $item->setMenu($menu);
 
@@ -115,7 +123,8 @@ class MenuAdmin extends Admin {
         }
     }
 
-    private function prepareItem(MenuItem $item) {
+    private function prepareItem(MenuItem $item)
+    {
         $key = $item->getRouteKey();
         $name = $item->getName();
         $position = $item->getPosition();
@@ -144,7 +153,8 @@ class MenuAdmin extends Admin {
         return true;
     }
 
-    private function prepare(MenuItem $item) {
+    private function prepare(MenuItem $item)
+    {
         $parent = null;
         if ($item->getParent() instanceof MenuItemInterface) {
             if ($item->getParent()->getId()) {
@@ -156,5 +166,4 @@ class MenuAdmin extends Admin {
 
         return $parent;
     }
-
 }
