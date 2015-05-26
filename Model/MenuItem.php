@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 abstract class MenuItem implements MenuItemInterface
 {
+
     /**
      * @var MenuInterface
      */
@@ -25,6 +26,16 @@ abstract class MenuItem implements MenuItemInterface
      * @var string
      */
     protected $name;
+
+    /**
+     * @var string
+     */
+    protected $type;
+
+    /**
+     * @var string
+     */
+    protected $uri;
 
     /**
      * @var string
@@ -118,6 +129,26 @@ abstract class MenuItem implements MenuItemInterface
         return $this->name;
     }
 
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    public function setUri($uri)
+    {
+        $this->uri = $uri;
+    }
+
     public function getRouteKey()
     {
         return $this->routeKey;
@@ -183,4 +214,5 @@ abstract class MenuItem implements MenuItemInterface
 
         return $this;
     }
+
 }

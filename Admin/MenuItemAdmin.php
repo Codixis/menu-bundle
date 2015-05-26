@@ -9,6 +9,7 @@ use Sonata\PageBundle\Entity\PageManager;
 
 class MenuItemAdmin extends Admin
 {
+
     /**
      * @var array
      */
@@ -33,6 +34,11 @@ class MenuItemAdmin extends Admin
     {
         $formMapper
                 ->add('name', null, array('required' => true))
+                ->add('type', 'choice', array('required' => true, 'choices' => array(
+                        'url' => 'url',
+                        'section' => 'sección'
+            )))
+                ->add('uri', null, array('required' => true))
                 ->add('routeKey', 'choice', array(
                     'required' => false,
                     'choices' => $this->getChoices(),
@@ -82,4 +88,5 @@ class MenuItemAdmin extends Admin
 
         return $this;
     }
+
 }

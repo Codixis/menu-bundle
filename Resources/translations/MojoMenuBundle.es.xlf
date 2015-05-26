@@ -51,14 +51,21 @@
                 <target>Padre</target>
             </trans-unit>
             <trans-unit id="cfaaade07ef976bf7432c10fefea8bf3" resname="filter.label_name">
-              <source>filter.label_name</source>
-              <target>Nombre</target>
+                <source>filter.label_name</source>
+                <target>Nombre</target>
             </trans-unit>
             <trans-unit id="2fb5bbd652a071ff7325c12154c9921e" resname="filter.label_site">
-              <source>filter.label_site</source>
-              <target>Sección</target>
+                <source>filter.label_site</source>
+                <target>Sección</target>
             </trans-unit>            
-            
+            <trans-unit id="eb829c8212392825e1180b1f48ba90d7" resname="form.label_type">
+                <source>form.label_type</source>
+                <target>__form.label_type__</target>
+            </trans-unit>
+            <trans-unit id="83eed19fa710644686d6c94bd827b6b2" resname="form.label_uri">
+                <source>form.label_uri</source>
+                <target>__form.label_uri__</target>
+            </trans-unit>            
         </body>
     </file>
 </xliff>
