@@ -4,9 +4,9 @@
     <mapped-superclass name="Mojo\Bundle\MenuBundle\Entity\BaseMenuItem">
         <field name="name" type="string" column="name" length="255"/>
         <field name="type" type="string" column="type" length="255"/>
-        <field name="uri" type="string" column="uri" length="255"/>
-        <field name="routeKey" type="string" column="route_key" length="255"/>
-        <field name="routeName" type="string" column="route_name" length="255"/>
+        <field name="uri" type="string" column="uri" length="255" nullable="true" />
+        <field name="routeKey" type="string" column="route_key" length="255" nullable="true"/>
+        <field name="routeName" type="string" column="route_name" length="255" nullable="true" />
         <field name="params" type="json_array" column="params"/>
         <field name="position" type="integer" column="position"/>
     </mapped-superclass>

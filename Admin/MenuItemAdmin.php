@@ -38,7 +38,7 @@ class MenuItemAdmin extends Admin
                         'url' => 'url',
                         'section' => 'sección'
             )))
-                ->add('uri', null, array('required' => true))
+                ->add('uri', null, array('required' => false))
                 ->add('routeKey', 'choice', array(
                     'required' => false,
                     'choices' => $this->getChoices(),

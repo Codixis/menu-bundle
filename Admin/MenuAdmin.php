@@ -12,6 +12,7 @@ use Sonata\CoreBundle\Validator\ErrorElement;
 
 class MenuAdmin extends Admin
 {
+
     /**
      * @var array
      */
@@ -66,7 +67,7 @@ class MenuAdmin extends Admin
                 ->add('site', 'sonata_type_model_list', array(
                     'btn_add' => false,
                     'btn_delete' => false,
-                    'required' => true, ), array(
+                    'required' => true,), array(
                     'link_parameters' => array(
                         'selector' => 'site',
                     ),
@@ -74,12 +75,26 @@ class MenuAdmin extends Admin
                 )
                 ->end();
 
+//                    ->add('items', 'sonata_type_collection', array(        
         if ($this->hasSubject() and $this->getSubject()->getSite()) {
             $formMapper->with('Items', array('class' => 'col-md-8'))
                     ->add('items', 'mojo_type_tree_collection', array(
                             ), array(
                         'edit' => 'inline',
                         'inline' => 'table',
+                        'link_parameters' => array(
+                            'site' => $this->getSubject()->getSite()->getId(),
+                        ),
+                    ))
+                    ->end();
+        }
+        if ($this->hasSubject() and $this->getSubject()->getSite()) {
+            $formMapper->with('Items', array('class' => 'col-md-8'))
+                    ->add('items', 'sonata_type_collection', array(
+                            ), array(
+                        'edit' => 'inline',
+                        'inline' => 'table',
+                        'sortable' => true,
                         'link_parameters' => array(
                             'site' => $this->getSubject()->getSite()->getId(),
                         ),
@@ -166,4 +181,12 @@ class MenuAdmin extends Admin
 
         return $parent;
     }
+
+    public function getFormTheme()
+    {
+        return array_merge(
+                parent::getFormTheme(), array('MojoMenuBundle:Form:widgets.html.twig')
+        );
+    }
+
 }

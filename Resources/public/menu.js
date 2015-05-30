@@ -1,5 +1,6 @@
 $(function() {
     $.fn.menuItems = function() {
+        
         function menuItemType($tr) {
             var value = $tr.find('select[name*="type"]').val();
             

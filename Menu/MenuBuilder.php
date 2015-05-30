@@ -18,6 +18,7 @@ use Mojo\Bundle\MenuBundle\Model\MenuInterface;
  */
 class MenuBuilder
 {
+
     private $factory;
 
     /**
@@ -47,13 +48,25 @@ class MenuBuilder
         $name = $item->getName();
         $route = $item->getRoutename();
         $params = $item->getParams();
+        $uri = $item->getUri();
 
-        $node = $root->addChild($name, array(
-            'route' => $route,
-            'routeParameters' => $params,
-        ));
+
+        $type = $item->getType();
+        if ($type == 'section') {
+            $node = $root->addChild($name, array(
+                'route' => $route,
+                'routeParameters' => $params,
+            ));
+        } else {
+            $node = $root->addChild($name, array(
+                'uri' => $uri,
+                
+            ));
+        }
+
         foreach ($item->getChildren() as $subItem) {
             $this->addMenu($node, $subItem);
         }
     }
+
 }

@@ -60,11 +60,11 @@
             </trans-unit>            
             <trans-unit id="eb829c8212392825e1180b1f48ba90d7" resname="form.label_type">
                 <source>form.label_type</source>
-                <target>__form.label_type__</target>
+                <target>Tipo</target>
             </trans-unit>
             <trans-unit id="83eed19fa710644686d6c94bd827b6b2" resname="form.label_uri">
                 <source>form.label_uri</source>
-                <target>__form.label_uri__</target>
+                <target>Url</target>
             </trans-unit>            
         </body>
     </file>
